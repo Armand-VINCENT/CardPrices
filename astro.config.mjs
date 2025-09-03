@@ -5,7 +5,8 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://Armand-VINCENT/CardPrices.github.io",
+  site: "https://Armand-VINCENT.github.io",
+  base: "/CardPrices",
 
   vite: {
     plugins: [tailwindcss()],
