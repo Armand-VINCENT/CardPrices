@@ -9,6 +9,7 @@
   --color-text: oklch(0.7777 0.0237 280.78);
   --color-text2: oklch(0.4218 0.0317 278.09);
   --color-text3: oklch(0.5543 0.0447 278.94);
+  --color-text4: oklch(0.5923 0.1644 277.85);
 
   --background-image-grad: var(--linear-gradient);
 }
@@ -27,4 +28,15 @@
       var(--color-secondary-gradient)
     );
   }
+}
+
+@utility bg-image-top {
+  background-image:
+    url("./../../../BUT3_Crea_25-projet1/_Projet_1_Pricing-Card-Start/images/bg-top.svg"),
+    url("./../../../BUT3_Crea_25-projet1/_Projet_1_Pricing-Card-Start/images/bg-bottom.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-size: contain, contain;
+  background-position:
+    top center,
+    bottom left;
 }

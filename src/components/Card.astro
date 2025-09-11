@@ -2,23 +2,30 @@
 const { title, price, highlight = false } = Astro.props;
 
 const highlightClasses = highlight ? "bg-grad " : "";
+const highlightTextClasses = highlight ? "text-white " : "text-text3 ";
+const neutralbtnClasses = highlight ? "text-text4 bg-white" : "text-bg bg-grad";
+const centralsize = highlight ? "lg:scale-110 " : "";
 ---
 
 <div
-  class={`bg-white ${highlightClasses} w-xs flex flex-col items-center gap-8 rounded-2xl`}
+  class={`bg-white ${highlightClasses} w-xs shadow-2xl flex flex-col items-center gap-8 rounded-2xl ${centralsize}`}
 >
-  <h2 class="text-text3 mt-8 text-xl font-bold">{title}</h2>
-  <div class="border-b-1 text-text2 flex flex-row items-center p-2">
+  <h2 class={`text-text3 ${highlightTextClasses} mt-8 text-xl font-bold`}>
+    {title}
+  </h2>
+  <div
+    class={`border-b-1 text-text2 ${highlightTextClasses} flex flex-row items-center p-2`}
+  >
     <p class="text-3xl font-bold">$</p>
     <p class="text-6xl font-bold">{price}</p>
   </div>
-  <section class="text-text3 flex flex-col gap-2">
+  <section class={`text-text3 ${highlightTextClasses} flex flex-col gap-2`}>
     <p class="border-b-1 p-2 text-lg">500 GB Storage</p>
     <p class="border-b-1 p-2 text-lg">2 Users Allowed</p>
     <p class="border-b-1 p-2 text-lg">Send up to 3 GB</p>
   </section>
   <button
-    class="text-bg bg-grad mb-8 w-4/5 rounded p-2 uppercase tracking-wider"
+    class={`${neutralbtnClasses} font-semibold mb-8 w-4/5 rounded p-2 uppercase tracking-wider`}
   >
     Learn More
   </button>
