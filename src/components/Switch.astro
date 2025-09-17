@@ -1,0 +1,23 @@
+---
+const { checked = false } = Astro.props;
+---
+
+<div class="flex flex-row items-center gap-5 font-semibold">
+  <p class="opacity-50">Annually</p>
+  <input
+    type="checkbox"
+    id="switch"
+    class="peer hidden"
+    checked={checked}
+    on:change={(e) => (Astro.props.checked = e.target.checked)}
+  />
+  <label
+    for="switch"
+    class="peer-checked:bg-grad relative mx-2 inline-block h-6 w-12 cursor-pointer rounded-full bg-gray-300 align-middle transition-colors duration-300"
+  >
+    <span
+      class="absolute left-1 top-1 h-4 w-4 rounded-full bg-white transition-transform duration-300 peer-checked:translate-x-6"
+      style="transition-property: transform;"></span>
+  </label>
+  <p class="opacity-50">Monthly</p>
+</div>
